@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import { ITransaction } from './transection.interface'
+import { ITransaction } from './transaction.interface'
 import { TransactionModel } from './transaction.model'
 import { AccountModel } from '../accounts/accounts.model'
 
@@ -28,7 +28,10 @@ const createTransaction = async (payload: ITransaction) => {
   }
 }
 const getAllTransactions = async () => {
-  return await TransactionModel.find().populate('referenceAccountId')
+  return await TransactionModel.find()
+    .populate('debitAccount')
+    .populate('creditAccount')
+    .sort({ date: -1 })
 }
 export const TransactionServices = {
   createTransaction,

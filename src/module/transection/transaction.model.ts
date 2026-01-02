@@ -1,39 +1,39 @@
 import { model, Schema } from 'mongoose'
-import { ITransaction } from './transection.interface'
+import { ITransaction } from './transaction.interface'
 
-const transactionSchema = new Schema({
-  date: {
-    type: Date,
-    default: Date.now,
-    required: true,
+const transactionSchema = new Schema(
+  {
+    date: {
+      type: Date,
+      default: Date.now,
+      required: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+    transactionType: {
+      type: String,
+      required: true,
+      enum: ['sales', 'purchase', 'receipt', 'payment'],
+    },
+    debitAccount: {
+      type: Schema.Types.ObjectId,
+      ref: 'Account',
+      required: true,
+    },
+    creditAccount: {
+      type: Schema.Types.ObjectId,
+      ref: 'Account',
+      required: true,
+    },
+    amount: {
+      type: Number,
+      required: true,
+    },
   },
-  description: {
-    type: String,
-    required: true,
-  },
-  transactionType: {
-    type: String,
-    required: true,
-    enum: ['sales', 'purchase', 'receipt', 'payment'],
-  },
-  debitAccount: {
-    type: Number,
-    required: true,
-  },
-  creditAccount: {
-    type: Number,
-    required: true,
-  },
-  amount: {
-    type: Number,
-    required: true,
-  },
-  referenceAccountId: {
-    type: Schema.Types.ObjectId,
-    required: true,
-    ref: 'Account',
-  },
-})
+  { timestamps: true },
+)
 
 export const TransactionModel = model<ITransaction>(
   'TransactionModel',

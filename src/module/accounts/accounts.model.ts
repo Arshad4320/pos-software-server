@@ -12,6 +12,7 @@ const AccountSchema = new Schema(
       required: true,
       enum: ['Asset', 'Liability', 'Equity', 'Revenue', 'Expense'],
     },
+    balance: { type: Number, default: 0 },
   },
   { timestamps: true },
 )

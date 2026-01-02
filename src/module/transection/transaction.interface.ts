@@ -6,8 +6,7 @@ export interface ITransaction {
   date: Date
   description: string
   transactionType: TransactionType
-  debitAccount: number
-  creditAccount: number
+  debitAccount: Types.ObjectId
+  creditAccount: Types.ObjectId
   amount: number
-  referenceAccountId: Types.ObjectId
 }
