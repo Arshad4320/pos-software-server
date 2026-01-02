@@ -3,8 +3,8 @@ import { AccountController } from './accounts.controller'
 
 const router = Router()
 router.post('/create-account', AccountController.createAccount)
-router.get('/get-accounts', AccountController.getAllAccounts)
-router.get('/get-account/:id', AccountController.getAccountById)
+router.get('/accounts', AccountController.getAllAccounts)
+router.get('/account/:id', AccountController.getAccountById)
 router.patch('/update-account/:id', AccountController.updateAccount)
 router.delete('/delete-account/:id', AccountController.deleteAccount)
 
