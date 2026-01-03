@@ -4,8 +4,12 @@
   "description": "",
   "main": "src/server.ts",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
     "build": "tsc",
+    "start": "node dist/server.js",
+
+
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+
     "lint-staged": "lint-staged",
     "lint": "eslint --ignore-path .eslintignore --ext .js,.ts .",
     "lint-check": "eslint . --fix",
@@ -16,7 +20,7 @@
   "lint-staged": {
     "src/**/*.ts": "npm run lint-prettier"
   },
-  "keywords": [],
+  "keywords": [ ],
   "author": "Arshad Ullah",
   "license": "ISC",
   "dependencies": {
