@@ -1,7 +1,7 @@
 import { Router } from 'express'
 
 import { accountRoute } from '../module/accounts/accounts.routes'
-import { transactionRoute } from '../module/transection/transaction.routes'
+import { transactionRoute } from '../module/transaction/transaction.routes'
 import { reportRouter } from '../module/report/report.routes'
 
 const router = Router()

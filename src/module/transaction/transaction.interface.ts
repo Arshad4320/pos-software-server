@@ -1,6 +1,6 @@
 import { Types } from 'mongoose'
 
-type TransactionType = 'sales' | 'purchase' | 'receipt' | 'payment'
+type TransactionType = 'Sales' | 'Purchase' | 'Receipt' | 'Payment'
 
 export interface ITransaction {
   date: Date

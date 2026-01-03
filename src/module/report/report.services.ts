@@ -1,5 +1,5 @@
 import { AccountModel } from '../accounts/accounts.model'
-import { TransactionModel } from '../transection/transaction.model'
+import { TransactionModel } from '../transaction/transaction.model'
 
 const getJournalReport = async () => {
   try {
